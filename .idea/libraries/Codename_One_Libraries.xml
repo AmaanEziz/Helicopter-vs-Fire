@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Codename One Libraries">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/CodenameOne.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/CodenameOne_SRC.zip!/" />
+    </SOURCES>
+  </library>
+</component>
