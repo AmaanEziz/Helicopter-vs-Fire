@@ -34,32 +34,9 @@ public abstract class FlightPath extends GameObject {
             active = false;
         }
 
-        public boolean isActive(){
-            return active;
-        }
-
         @Override
         public void setEndControlPoint(Point2D lastControlPoint){
             super.setEndControlPoint(lastControlPoint);
-        }
-
-        public void moveAlongAPath(Point2D c){
-            Point2D p = evaluateCurve(t);
-
-            double tx = p.getX() - c.getX();
-            double ty = p.getY() - c.getY();
-
-            double theta = 360 - Math.toDegrees(Math.atan2(ty,tx));
-
-            nph.translate(tx,ty);
-
-            if(t<=1){
-                t += 0.001*nph.getSpeed();
-                nph.rotate(nph.getHeading() - theta);
-                nph.setHeading((int) theta);
-            }else{
-                t=0;
-            }
         }
 
         @Override
@@ -79,17 +56,6 @@ public abstract class FlightPath extends GameObject {
             correction = new Traversal(nph);
             primary.activate();
             correction.deactivate();
-        }
-
-        public void moveAlongAPath(Point2D c){
-            primary.moveAlongAPath(c);
-        }
-        public Traversal getPrimary(){
-            return primary;
-        }
-
-        public Traversal getCorrection(){
-            return correction;
         }
     }
     public static class BezierCurve extends GameObject {
@@ -211,13 +177,9 @@ public abstract class FlightPath extends GameObject {
         }
 
         private double choose(int n, int k) {
-            //base case
-            //
             if (k <= 0 || k >= n) {
                 return 1;
             }
-            // recurse using pascal's triangle
-            //
             return choose(n - 1, k - 1) + choose(n - 1, k);
         }
 
