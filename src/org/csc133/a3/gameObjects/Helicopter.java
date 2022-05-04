@@ -361,20 +361,7 @@ public class Helicopter extends Movable implements Steerable {
     }
 
     //````````````````````````````````````````````````````````````````````````
-    private class Ready extends HeloState{
-        @Override
-        public void startOrStopEngine(){
-            // conditions go here to test for wether or not we can stop
-            // the engine
-            if(1>2){
-                getHelo().changeState(new Stopping());
-            }
-        }
-        public void accelerate(){
-            // do some acceleration
-        }
-    }
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     private ArrayList<GameObject> heloParts;
 
     private HeloBlade heloBlade;
