@@ -255,8 +255,6 @@ public class Helicopter extends Movable implements Steerable {
     }
 
 
-    //````````````````````````````````````````````````````````````````````````
-
     private static class HeloRearRotor extends Rectangle{
         public HeloRearRotor(){
             super(ColorUtil.GRAY,
@@ -314,13 +312,7 @@ public class Helicopter extends Movable implements Steerable {
         protected Helicopter getHelo() {
             return Helicopter.this;
         }
-        public void accelerate(){
-
-        }
         public void startOrStopEngine(){}
-        public boolean hasLandedAt(){
-            return false;
-        }
         public void updateLocalTransforms(){
             // if not moving shouldn't be able to move
         }
@@ -333,14 +325,7 @@ public class Helicopter extends Movable implements Steerable {
         @Override
         public void startOrStopEngine(){
             getHelo().changeState(new Starting());
-            //System.err.println("hi");
             canMove = true;
-        }
-
-        @Override
-        public boolean hasLandedAt() {
-            // check other requirements
-            return true; // some boolean expression
         }
     }
 
@@ -416,9 +401,6 @@ public class Helicopter extends Movable implements Steerable {
         heloParts.add(new HeloText());
     }
 
-    public void accelerate(){
-        heloState.accelerate();
-    }
 
     public void startOrStopEngine(){
         heloState.startOrStopEngine();
