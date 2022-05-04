@@ -17,10 +17,6 @@ import java.util.ArrayList;
 import static com.codename1.ui.CN.*;
 
 public class Helicopter extends Movable implements Steerable {
-    private int fuel;
-    private int water;
-    private static int color1;
-    private boolean canMove;
     final static int BUBBLE_RADIUS = 125;
     final static int ENGINE_BLOCK_WIDTH = (int)(BUBBLE_RADIUS*1.8);
     final static int ENGINE_BLOCK_HEIGHT = (ENGINE_BLOCK_WIDTH/3);
@@ -32,6 +28,11 @@ public class Helicopter extends Movable implements Steerable {
     final static int LEG_HEIGHT = 10;
     final static int TAIL_WIDTH = 10;
     final static int TAIL_HEIGHT = (int) (RAIL_LENGTH*0.85);
+    private int fuel;
+    private int water;
+    private static int color1;
+    private boolean canMove;
+
 
     //````````````````````````````````````````````````````````````````````````
     private static class HeloBubble extends Arc {
