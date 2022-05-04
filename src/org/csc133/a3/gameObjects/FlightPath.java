@@ -70,30 +70,28 @@ public abstract class FlightPath extends GameObject {
             }
         }
     }
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     public class FlightControl{
-         private Traversal primary;
-         private Traversal correction;
-         public FlightControl(NonPlayerHelicopter nph){
-             primary = new Traversal(nph);
-             correction = new Traversal(nph);
-             primary.activate();
-             correction.deactivate();
-         }
+        private Traversal primary;
+        private Traversal correction;
+        public FlightControl(NonPlayerHelicopter nph){
+            primary = new Traversal(nph);
+            correction = new Traversal(nph);
+            primary.activate();
+            correction.deactivate();
+        }
 
-         public void moveAlongAPath(Point2D c){
-             primary.moveAlongAPath(c);
-         }
-         public Traversal getPrimary(){
-             return primary;
-         }
+        public void moveAlongAPath(Point2D c){
+            primary.moveAlongAPath(c);
+        }
+        public Traversal getPrimary(){
+            return primary;
+        }
 
-         public Traversal getCorrection(){
-             return correction;
-         }
+        public Traversal getCorrection(){
+            return correction;
+        }
     }
-
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public static class BezierCurve extends GameObject {
         ArrayList<Point2D> controlPoints;
         int curveID;
