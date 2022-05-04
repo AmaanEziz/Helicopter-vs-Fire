@@ -329,7 +329,6 @@ public class Helicopter extends Movable implements Steerable {
         }
     }
 
-    //````````````````````````````````````````````````````````````````````````
     private class Starting extends HeloState{
         @Override
         public void startOrStopEngine(){
